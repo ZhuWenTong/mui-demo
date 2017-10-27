@@ -170,7 +170,7 @@
 				});
 				mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
 					//自定义事件 传参
-					mui.fire(detailPage, 'options', {id: this.getAttribute('id'), title: this.innerHTML});
+					mui.fire(detailPage, 'options', {id: this.getAttribute('id'), title: this.childNodes[0].innerHTML});
 					mui.openWindow({
 						id: 'detail',
 						url: 'detail.html'

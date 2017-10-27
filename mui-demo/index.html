@@ -30,13 +30,16 @@
         <div class="mui-progressbar mui-progressbar-infinite">
         	<span></span>
         </div>
-        
+        <button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="refresh">goRefreshHtml</button>
     </div>
-    <a href="html/refresh.html">refresh</a>
+    
     <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     mui.init({
-    	
+    	preloadPages: [{
+    		url: 'html/refresh.html',
+    		id: 'refresh.html'
+    	}]
     })
     </script>
     <script src="js/index.js"></script>

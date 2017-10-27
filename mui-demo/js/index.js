@@ -1,4 +1,4 @@
-function plusReady() {
+mui.plusReady(function(){
 	mui('.mui-content').on('tap', '.action', () => {
 		plus.nativeUI.actionSheet({
 			title: "系统选择按钮框",
@@ -142,10 +142,12 @@ function plusReady() {
 			}
 		});
 	})
-}
-if(window.plus){
-	plusReady();
-}else{
-	document.addEventListener("plusready",plusReady,false);
-}
-mui('.mui-content').progressbar({progress: 20}).show();
+	mui('.mui-content').progressbar({progress: 20}).show();
+	mui('.mui-content').on('tap', '#refresh', function() {
+		mui.openWindow({
+			url: 'html/refresh.html',
+			id: 'refresh.html'
+		})
+	})
+})
+
