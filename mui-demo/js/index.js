@@ -143,7 +143,7 @@ mui.plusReady(function(){
 		});
 	})
 	mui('.mui-content').progressbar({progress: 20}).show();
-	mui('.mui-content').on('tap', '#refresh', function() {
+	document.getElementById('refresh').addEventListener('tap', function() {
 		mui.openWindow({
 			url: 'html/refresh.html',
 			id: 'refresh.html'
