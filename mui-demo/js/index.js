@@ -148,3 +148,4 @@ if(window.plus){
 }else{
 	document.addEventListener("plusready",plusReady,false);
 }
+mui('.mui-content').progressbar({progress: 20}).show();

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron">
+					<!--<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 1</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 2</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 3</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 4</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 5</a>
+					</li>-->
+				</ul>
+			</div>
+		</div><!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron">
+					<!--<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 1</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 2</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 3</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 4</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="" class="mui-navigate-right">Item 5</a>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				preloadPages: [{
+					url: 'detail.html',
+					id: 'detail'
+				}],
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						callback: pullupRefresh
+					}
+				}
+			})
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			var count = 0;
+			init(count);
+
+			function init(isZero) {
+				console.log(isZero)
+				var arr = [isZero * 5 + 1, isZero * 5 + 2, isZero * 5 + 3, isZero * 5 + 4, isZero * 5 + 5],
+					table = document.body.querySelector('.mui-table-view');
+				if(isZero == 0) {
+					table.innerHTML = '';
+				}
+				arr.forEach((i) => {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = `<a class="mui-navigate-right">Item-${i}</a>`;
+					li.setAttribute('id', i);
+					table.appendChild(li);
+				})
+			}
+
+			function pulldownRefresh() {
+				setTimeout(() => {
+//					var table = document.body.querySelector('.mui-table-view');
+//					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//					for (var i = cells.length, len = i + 3; i < len; i++) {
+//						var li = document.createElement('li');
+//						li.className = 'mui-table-view-cell';
+//						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//						//下拉刷新，新纪录插到最前面；
+//						table.insertBefore(li, table.firstChild);
+//					}
+					init(0)
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(false)
+					sessionStorage.setItem('count', 0);
+					count = sessionStorage.getItem('count')
+					mui('#pullrefresh').pullRefresh().refresh(count == 0);
+				}, 500);
+			}
+
+			/**
+			 * 上拉加载具体业务实现
+			 */
+
+			function pullupRefresh() {
+				count = sessionStorage.getItem('count');
+				setTimeout(() => {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+
+//					var table = document.body.querySelector('.mui-table-view');
+//					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//					for (var i = cells.length, len = i + 5; i < len; i++) {
+//						var li = document.createElement('li');
+//						li.className = 'mui-table-view-cell';
+//						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//						table.appendChild(li);
+//					}
+					sessionStorage.setItem('count', count);
+					init(count);
+				}, 500);
+			}
+//			if (mui.os.plus) {
+//				mui.plusReady(function() {
+//					setTimeout(function() {
+//						mui('#pullrefresh').pullRefresh().pullupLoading();
+//					}, 10);
+//
+//				});
+//			} else {
+//				mui.ready(function() {
+//					mui('#pullrefresh').pullRefresh().pullupLoading();
+//				});
+//			}
+			mui.plusReady(function(){
+//				mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
+//				//console.log(JSON.stringify(this))
+//					var uuid = this.getAttribute('id'),
+//						title = this.innerHTML;
+//					mui.openWindow({
+//						id: 'detali',
+//						url: 'detail.html',
+//						extras: {//传参
+//							uuid,
+//							title
+//						},
+//						show: {
+//							aniShow: 'fade-in',
+//							duration: 300
+//						}
+//					})
+//				})
+				var detailPage = mui.preload({
+					url: 'detail.html',
+					id: 'detail'
+				});
+				mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
+					//自定义事件 传参
+					mui.fire(detailPage, 'options', {id: this.getAttribute('id'), title: this.innerHTML});
+					mui.openWindow({
+						id: 'detail',
+						url: 'detail.html'
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

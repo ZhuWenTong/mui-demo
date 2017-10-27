@@ -206,16 +206,49 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"js/index.js"
+					"js/index.js",
+					"html/refresh.html"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"html/refresh.html": {
+				"resources": [
+					"js/refresh.js",
+					"css/refresh.css",
+					"index.html",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"html/detail.html",
+					"html/ref_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/detail.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"html/refresh.html",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/ref_sub.html": {
+				"resources": [
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"html/detail.html"
+				],
 				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"fonts/mui-icons-extra.ttf",
-				"fonts/mui.ttf"
+				"fonts/mui-icons-extra.ttf"
 			]
 		}
 	}
