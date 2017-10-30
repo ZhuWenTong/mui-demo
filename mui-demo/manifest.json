@@ -199,7 +199,9 @@
 					"js/index.js",
 					"html/refresh.html"
 				],
-				"refer": [],
+				"refer": [
+					"html/demo.html"
+				],
 				"priority": 0
 			},
 			"html/refresh.html": {
@@ -233,6 +235,19 @@
 				"refer": [
 					"html/detail.html"
 				],
+				"priority": 0
+			},
+			"html/demo.html": {
+				"resources": [
+					"js/demo.js",
+					"css/demo.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"img/a.jpg",
+					"img/b.jpg"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

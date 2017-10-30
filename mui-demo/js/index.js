@@ -1,4 +1,4 @@
-mui.plusReady(function(){
+mui.plusReady(function() {
 	mui('.mui-content').on('tap', '.action', () => {
 		plus.nativeUI.actionSheet({
 			title: "系统选择按钮框",
@@ -13,44 +13,44 @@ mui.plusReady(function(){
 		});
 	})
 	mui('.mui-content').on('tap', '.alert', () => {
-		plus.nativeUI.alert( "系统提示对话框", function(){
-			console.log( "User pressed!" );
-		}, "提示", "OK" );
+		plus.nativeUI.alert("系统提示对话框", function() {
+			console.log("User pressed!");
+		}, "提示", "OK");
 	});
 	mui('.mui-content').on('tap', '.confirm', () => {
-		plus.nativeUI.confirm( "系统确认对话框", function(e){
-			console.log("Close confirm: "+e.index);
+		plus.nativeUI.confirm("系统确认对话框", function(e) {
+			console.log("Close confirm: " + e.index);
 		});
 	});
 	mui('.mui-content').on('tap', '.waiting', () => {
-		plus.nativeUI.showWaiting( "等待中..." );
-		setTimeout( function(){
+		plus.nativeUI.showWaiting("等待中...");
+		setTimeout(function() {
 			plus.nativeUI.closeWaiting();
-		}, 2000 );
+		}, 2000);
 	})
 	mui('.mui-content').on('tap', '.date', () => {
-		plus.nativeUI.pickDate( function(e){
-			var d=e.date;
-			console.log( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
-		},function(e){
-			console.log( "未选择日期："+e.message );
+		plus.nativeUI.pickDate(function(e) {
+			var d = e.date;
+			console.log("选择的日期：" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate());
+		}, function(e) {
+			console.log("未选择日期：" + e.message);
 		});
 	})
 	mui('.mui-content').on('tap', '.time', () => {
-		plus.nativeUI.pickTime( function(e){
-			var d=e.date;
-			console.log( "选择的时间："+d.getHours()+":"+d.getMinutes() );
-		},function(e){
-			console.log( "未选择时间："+e.message );
+		plus.nativeUI.pickTime(function(e) {
+			var d = e.date;
+			console.log("选择的时间：" + d.getHours() + ":" + d.getMinutes());
+		}, function(e) {
+			console.log("未选择时间：" + e.message);
 		});
 	})
 	mui('.mui-content').on('tap', '.prompt', () => {
-		plus.nativeUI.prompt( "Input your name: ", function(e){
-			console.log( ((e.index==0)?"OK: ":"Cancel")+e.value );
-		},"输入对话框", "your name", ["OK","Cancel"]);
+		plus.nativeUI.prompt("Input your name: ", function(e) {
+			console.log(((e.index == 0) ? "OK: " : "Cancel") + e.value);
+		}, "输入对话框", "your name", ["OK", "Cancel"]);
 	})
 	mui('.mui-content').on('tap', '.toast', () => {
-		plus.nativeUI.toast( "I'am toast information!");
+		plus.nativeUI.toast("I'am toast information!");
 	})
 	mui('.mui-content').on('tap', '.actionbuttonstyles', () => {
 		var actionbuttons = [{
@@ -73,45 +73,53 @@ mui.plusReady(function(){
 		});
 	})
 	mui('.mui-content').on('tap', '.confirmoptions', () => {
-		plus.nativeUI.confirm("Are you sure ready?", function(e){
-			console.log("Close confirm: "+e.index);
-		}, {"title":"确认对话框的参数",
-			"buttons":["Yes","No"],
-			"verticalAlign":"center"//top center bottom
+		plus.nativeUI.confirm("Are you sure ready?", function(e) {
+			console.log("Close confirm: " + e.index);
+		}, {
+			"title": "确认对话框的参数",
+			"buttons": ["Yes", "No"],
+			"verticalAlign": "center" //top center bottom
 		});
 	})
 	mui('.mui-content').on('tap', '.pickdateoption', () => {
-//		plus.nativeUI.pickDate( function(e){
-//			var d=e.date;
-//			console.log( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
-//		},function(e){
-//			console.log( "未选择日期："+e.message );
-//		},{title:"请选择日期："});
-		var d=new Date();
-		d.setFullYear(2017,7,8);
-		plus.nativeUI.pickDate( function(e){
-			var d=e.date;
-			console.log( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
-			
-		},function(e){
-			console.log( "未选择日期："+e.message);
-		},{date:d,title:'请选择日期'});//date minDate maxDate title
+		//		plus.nativeUI.pickDate( function(e){
+		//			var d=e.date;
+		//			console.log( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
+		//		},function(e){
+		//			console.log( "未选择日期："+e.message );
+		//		},{title:"请选择日期："});
+		var d = new Date();
+		d.setFullYear(2017, 7, 8);
+		plus.nativeUI.pickDate(function(e) {
+			var d = e.date;
+			console.log("选择的日期：" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate());
+
+		}, function(e) {
+			console.log("未选择日期：" + e.message);
+		}, {
+			date: d,
+			title: '请选择日期'
+		}); //date minDate maxDate title
 	})
 	mui('.mui-content').on('tap', '.picktimeoption', () => {
-		var t=new Date();
-		t.setHours(13,0);
-		plus.nativeUI.pickTime( function(e){
-			var d=e.date;
-			console.log( "选择的时间："+d.getHours()+":"+d.getMinutes() );
-		},function(e){
-			console.log( "未选择时间："+e.message );
-		},{time:t,title: '请选择时间', is24Hour: true});
+		var t = new Date();
+		t.setHours(13, 0);
+		plus.nativeUI.pickTime(function(e) {
+			var d = e.date;
+			console.log("选择的时间：" + d.getHours() + ":" + d.getMinutes());
+		}, function(e) {
+			console.log("未选择时间：" + e.message);
+		}, {
+			time: t,
+			title: '请选择时间',
+			is24Hour: true
+		});
 	})
 	mui('.mui-content').on('tap', '.waitingobj', () => {
-		var w = plus.nativeUI.showWaiting( "等待中..." );
+		var w = plus.nativeUI.showWaiting("等待中...");
 		// 2秒后更新
 		setTimeout(() => {
-			w.setTitle( "正在更新" );
+			w.setTitle("正在更新");
 		}, 2000);
 		//3s后关闭
 		setTimeout(() => {
@@ -142,12 +150,19 @@ mui.plusReady(function(){
 			}
 		});
 	})
-	mui('.mui-content').progressbar({progress: 20}).show();
+	mui('.mui-content').progressbar({
+		progress: 20
+	}).show();
 	document.getElementById('refresh').addEventListener('tap', function() {
 		mui.openWindow({
 			url: 'html/refresh.html',
 			id: 'refresh.html'
 		})
 	})
+	document.getElementById('demo').addEventListener('tap', function() {
+		mui.openWindow({
+			url: 'html/demo.html',
+			id: 'demo.html'
+		})
+	})
 })
-
