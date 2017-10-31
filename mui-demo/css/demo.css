@@ -1,10 +1,13 @@
-#popover{
-	height: 100px;
-	width:200px;
+#popover {
+    height: 100px;
+    width: 200px;
 }
-.mui-off-canvas-left, .mui-off-canvas-right{
-	background: #fff;
+
+.mui-off-canvas-left,
+.mui-off-canvas-right {
+    background: #fff;
 }
-.mui-off-canvas-wrap:not(.mui-slide-in).mui-scalable{
-	background: #999;
+
+.mui-off-canvas-wrap:not(.mui-slide-in).mui-scalable {
+    background: #999;
 }
