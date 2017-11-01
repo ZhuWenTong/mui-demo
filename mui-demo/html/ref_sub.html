@@ -35,12 +35,14 @@
 					}
 				}
 			})
-			/**
-			 * 下拉刷新具体业务实现
-			 */
 			var count = 0;
 			init(count);
-
+			/**
+			 * 
+			 * @param {Number} isZero
+			 * @function
+			 * @description 模拟请求数据的方法
+			 */
 			function init(isZero) {
 				console.log(isZero)
 				var arr = [isZero * 5 + 1, isZero * 5 + 2, isZero * 5 + 3, isZero * 5 + 4, isZero * 5 + 5],
@@ -56,7 +58,10 @@
 					table.appendChild(li);
 				})
 			}
-
+			/**
+			 * @function
+			 * @description 下拉刷新
+			 */
 			function pulldownRefresh() {
 				setTimeout(() => {
 					init(0)
@@ -68,7 +73,8 @@
 				}, 500);
 			}
 			/**
-			 * 上拉加载具体业务实现
+			 * @function
+			 * @description 上拉加载
 			 */
 			function pullupRefresh() {
 				count = sessionStorage.getItem('count');
