@@ -247,7 +247,18 @@
 					"img/a.jpg",
 					"img/b.jpg"
 				],
-				"refer": [],
+				"refer": [
+					"html/demoA.html"
+				],
+				"priority": 0
+			},
+			"html/demoA.html": {
+				"resources": [
+					"html/demoA_sub.html"
+				],
+				"refer": [
+					"html/demoB.html"
+				],
 				"priority": 0
 			}
 		},

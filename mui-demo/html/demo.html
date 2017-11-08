@@ -234,6 +234,10 @@
                             <input name="Checkbox" type="checkbox">
                         </div>
                     </div>
+                    <!--demo-->
+                    <div class="mui-card">
+                    	<button type="button" class="mui-btn mui-btn-blue go-demo">goDemo</button>
+                    </div>
                 </div>
             </div>
             <div class="mui-off-canvas-backdrop"></div>
@@ -244,6 +248,14 @@
         mui.init();
     </script>
     <script src="../js/demo.js"></script>
+    <script>
+    	document.querySelector(".go-demo").addEventListener('tap', function() {
+    		mui.openWindow({
+    			url: 'demoA.html',
+    			id: 'demoA.html'
+    		})
+    	})
+    </script>
 </body>
 
 </html>

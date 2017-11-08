@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">demoB</h1>
+    </header>
+    <div class="mui-content">
+        <p>demoB</p>
+        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined back">返回</button>
+    </div>
+    <script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    mui.plusReady(function() {
+    	document.querySelector(".back").addEventListener('tap', function() {
+	    	var obj = {
+	    		name: 'zhangsan',
+	    		age: 20
+	    	},
+	    	demoASubPage = plus.webview.getWebviewById('demoA_sub.html');
+	    	mui.fire(demoASubPage, 'params', {
+	    		obj: obj
+	    	})
+	    	mui.back();
+	    })
+    })
+    </script>
+</body>
+</html>
