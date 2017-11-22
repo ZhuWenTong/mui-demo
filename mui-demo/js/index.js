@@ -1,4 +1,8 @@
 mui.plusReady(function() {
+	/**
+	 * 监听网络状态变化
+	 */
+	document.addEventListener("netchange", onNetChange, false);
     mui('.mui-content').on('tap', '.action', () => {
         plus.nativeUI.actionSheet({
             title: "系统选择按钮框",
@@ -18,9 +22,12 @@ mui.plusReady(function() {
         }, "提示", "OK");
     });
     mui('.mui-content').on('tap', '.confirm', () => {
-        plus.nativeUI.confirm("系统确认对话框", function(e) {
-            console.log("Close confirm: " + e.index);
-        });
+//      plus.nativeUI.confirm("系统确认对话框", function(e) {
+//          console.log("Close confirm: " + e.index);
+//      });
+		mui.confirm('请稍后', '温馨提示',['cancel', 'sure'], function(e) {
+			console.log(e.index);
+		}, 'div');
     });
     mui('.mui-content').on('tap', '.waiting', () => {
         plus.nativeUI.showWaiting("等待中...");
@@ -160,9 +167,18 @@ mui.plusReady(function() {
         })
     })
     document.getElementById('demo').addEventListener('tap', function() {
-        mui.openWindow({
-            url: 'html/demo.html',
-            id: 'demo.html'
-        })
+    	/**
+    	 * getNetwork() 为false - 无网络
+    	 */
+    	if(getNetwork()) {
+    		mui.openWindow({
+	            url: 'html/demo.html',
+	            id: 'demo.html'
+	        })
+    	} else {
+    		mui.alert('当前无网络连接', '温馨提示', function(e) {
+    			
+    		}, 'div');
+    	}
     })
 })
