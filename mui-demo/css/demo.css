@@ -5,9 +5,14 @@
 
 .mui-off-canvas-left,
 .mui-off-canvas-right {
-    background: #fff;
+    background: #999;
 }
 
 .mui-off-canvas-wrap:not(.mui-slide-in).mui-scalable {
     background: #999;
 }
+
+#offCanvasSide .mui-scroll-wrapper{
+	margin-top: 22px;
+}
+

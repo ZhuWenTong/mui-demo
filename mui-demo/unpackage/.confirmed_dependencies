@@ -1,73 +1,73 @@
 {
-	"index.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/index.js",
-			"html/refresh.html"
-		],
-		"refer": [
-			"html/refresh.html",
-			"html/demo.html"
-		]
-	},
-	"html/refresh.html": {
-		"resources": [
-			"js/refresh.js",
-			"css/refresh.css",
-			"index.html",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"html/detail.html",
-			"html/ref_sub.html"
-		],
-		"refer": [
-			"index.html",
-			"html/detail.html",
-			"html/ref_sub.html"
-		]
-	},
-	"html/detail.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"html/refresh.html",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"html/refresh.html"
-		]
-	},
-	"html/ref_sub.html": {
-		"resources": [
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"html/detail.html"
-		]
-	},
-	"html/demo.html": {
-		"resources": [
-			"js/demo.js",
-			"css/demo.css",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"img/a.jpg",
-			"img/b.jpg"
-		],
-		"refer": [
-			"html/demoA.html"
-		]
-	},
-	"html/demoA.html": {
-		"resources": [
-			"html/demoA_sub.html"
-		],
-		"refer": [
-			"html/demoB.html",
-			"html/demoA_sub.html"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/index.js",
+      "html/refresh.html"
+    ],
+    "refer": [
+      "html/refresh.html",
+      "html/demo.html"
+    ]
+  },
+  "html/refresh.html": {
+    "resources": [
+      "js/refresh.js",
+      "css/refresh.css",
+      "index.html",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "html/detail.html",
+      "html/ref_sub.html"
+    ],
+    "refer": [
+      "index.html",
+      "html/detail.html",
+      "html/ref_sub.html"
+    ]
+  },
+  "html/detail.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "html/refresh.html",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/refresh.html"
+    ]
+  },
+  "html/ref_sub.html": {
+    "resources": [
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/detail.html"
+    ]
+  },
+  "html/demo.html": {
+    "resources": [
+      "js/demo.js",
+      "css/demo.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/a.jpg",
+      "img/b.jpg"
+    ],
+    "refer": [
+      "html/demoA.html"
+    ]
+  },
+  "html/demoA.html": {
+    "resources": [
+      "html/demoA_sub.html"
+    ],
+    "refer": [
+      "html/demoB.html",
+      "html/demoA_sub.html"
+    ]
+  }
 }
