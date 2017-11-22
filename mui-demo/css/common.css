@@ -1,7 +1,12 @@
 .mui-bar{
 	padding-top: 22px;
 	height: 66px;
+	background: linear-gradient(to right, #1D8CE0, #58B7FF);
 }
 .mui-bar-nav~.mui-content{
 	padding-top: 66px;
+}
+.mui-bar .mui-title,
+.mui-bar-nav.mui-bar .mui-icon{
+	color: #fff;
 }
