@@ -3,7 +3,7 @@ mui.plusReady(function() {
 	 * 监听网络状态变化
 	 */
 	document.addEventListener("netchange", onNetChange, false);
-    mui('.mui-content').on('tap', '.action', () => {
+    mui('.mui-content').on('tap', '.action', function() {
         plus.nativeUI.actionSheet({
             title: "系统选择按钮框",
             cancel: "取消",
@@ -16,12 +16,12 @@ mui.plusReady(function() {
             console.log("User pressed: " + e.index);
         });
     })
-    mui('.mui-content').on('tap', '.alert', () => {
+    mui('.mui-content').on('tap', '.alert', function() {
         plus.nativeUI.alert("系统提示对话框", function() {
             console.log("User pressed!");
         }, "提示", "OK");
     });
-    mui('.mui-content').on('tap', '.confirm', () => {
+    mui('.mui-content').on('tap', '.confirm', function() {
 //      plus.nativeUI.confirm("系统确认对话框", function(e) {
 //          console.log("Close confirm: " + e.index);
 //      });
@@ -29,13 +29,13 @@ mui.plusReady(function() {
 			console.log(e.index);
 		}, 'div');
     });
-    mui('.mui-content').on('tap', '.waiting', () => {
+    mui('.mui-content').on('tap', '.waiting', function() {
         plus.nativeUI.showWaiting("等待中...");
         setTimeout(function() {
             plus.nativeUI.closeWaiting();
         }, 2000);
     })
-    mui('.mui-content').on('tap', '.date', () => {
+    mui('.mui-content').on('tap', '.date', function() {
         plus.nativeUI.pickDate(function(e) {
             var d = e.date;
             console.log("选择的日期：" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate());
@@ -43,7 +43,7 @@ mui.plusReady(function() {
             console.log("未选择日期：" + e.message);
         });
     })
-    mui('.mui-content').on('tap', '.time', () => {
+    mui('.mui-content').on('tap', '.time', function() {
         plus.nativeUI.pickTime(function(e) {
             var d = e.date;
             console.log("选择的时间：" + d.getHours() + ":" + d.getMinutes());
@@ -51,15 +51,15 @@ mui.plusReady(function() {
             console.log("未选择时间：" + e.message);
         });
     })
-    mui('.mui-content').on('tap', '.prompt', () => {
+    mui('.mui-content').on('tap', '.prompt', function() {
         plus.nativeUI.prompt("Input your name: ", function(e) {
             console.log(((e.index == 0) ? "OK: " : "Cancel") + e.value);
         }, "输入对话框", "your name", ["OK", "Cancel"]);
     })
-    mui('.mui-content').on('tap', '.toast', () => {
+    mui('.mui-content').on('tap', '.toast', function() {
         plus.nativeUI.toast("I'am toast information!");
     })
-    mui('.mui-content').on('tap', '.actionbuttonstyles', () => {
+    mui('.mui-content').on('tap', '.actionbuttonstyles', function() {
         var actionbuttons = [{
             title: "不同意",
             style: "destructive"
@@ -79,7 +79,7 @@ mui.plusReady(function() {
             console.log("User pressed: " + e.index);
         });
     })
-    mui('.mui-content').on('tap', '.confirmoptions', () => {
+    mui('.mui-content').on('tap', '.confirmoptions', function() {
         plus.nativeUI.confirm("Are you sure ready?", function(e) {
             console.log("Close confirm: " + e.index);
         }, {
@@ -88,7 +88,7 @@ mui.plusReady(function() {
             "verticalAlign": "center" //top center bottom
         });
     })
-    mui('.mui-content').on('tap', '.pickdateoption', () => {
+    mui('.mui-content').on('tap', '.pickdateoption', function() {
         //		plus.nativeUI.pickDate( function(e){
         //			var d=e.date;
         //			console.log( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
@@ -108,7 +108,7 @@ mui.plusReady(function() {
             title: '请选择日期'
         }); //date minDate maxDate title
     })
-    mui('.mui-content').on('tap', '.picktimeoption', () => {
+    mui('.mui-content').on('tap', '.picktimeoption', function() {
         var t = new Date();
         t.setHours(13, 0);
         plus.nativeUI.pickTime(function(e) {
@@ -122,18 +122,18 @@ mui.plusReady(function() {
             is24Hour: true
         });
     })
-    mui('.mui-content').on('tap', '.waitingobj', () => {
+    mui('.mui-content').on('tap', '.waitingobj', function() {
         var w = plus.nativeUI.showWaiting("等待中...");
         // 2秒后更新
-        setTimeout(() => {
+        setTimeout(function() {
             w.setTitle("正在更新");
         }, 2000);
         //3s后关闭
-        setTimeout(() => {
+        setTimeout(function() {
             w.close();
         }, 3000)
     })
-    mui('.mui-content').on('tap', '.actionsheetcallback', () => {
+    mui('.mui-content').on('tap', '.actionsheetcallback', function() {
         var actionbuttons = [{
             title: "不同意",
             style: "destructive"
