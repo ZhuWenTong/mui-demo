@@ -163,7 +163,10 @@ mui.plusReady(function() {
     document.getElementById('refresh').addEventListener('tap', function() {
         mui.openWindow({
             url: 'html/refresh.html',
-            id: 'refresh.html'
+            id: 'refresh.html',
+            show: {
+            	aniShow: 'slide-in-top'
+            }
         })
     })
     document.getElementById('demo').addEventListener('tap', function() {
@@ -173,7 +176,10 @@ mui.plusReady(function() {
     	if(getNetwork()) {
     		mui.openWindow({
 	            url: 'html/demo.html',
-	            id: 'demo.html'
+	            id: 'demo.html',
+	            show: {
+	            	aniShow: 'pop-in'
+	            }
 	        })
     	} else {
     		mui.alert('当前无网络连接', '温馨提示', function(e) {
