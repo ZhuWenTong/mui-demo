@@ -8,3 +8,4 @@ plus 只在真机中支持 普通浏览器不支持<br />
 涉及到html5+的api 写在mui.plusReady(function(){})中<br />
 沉浸式状态栏<br />
 手势事件<br />
+字体图标<br />
