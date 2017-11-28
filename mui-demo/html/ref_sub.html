@@ -87,6 +87,12 @@
 				}, 500);
 			}
 			mui.plusReady(function() {
+				/**
+				 * 向左滑动
+				 */
+				mui('html')[0].addEventListener("swiperight",function(){
+				    mui.back();
+				});
 				var detailPage = mui.preload({
 					url: 'detail.html',
 					id: 'detail'

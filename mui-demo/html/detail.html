@@ -16,8 +16,18 @@
     </header>
     <script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-        mui.init();
+        mui.init({
+        	gestureConfig: {
+				swipe: true //手势开关
+			}
+        });
         mui.plusReady(function() {
+        	/**
+			 * 向左滑动
+			 */
+			mui('html')[0].addEventListener("swiperight",function(){
+			    mui.back();
+			});
             //		var options = plus.webview.currentWebview();
             //		mui('#title')[0].innerHTML = options.title;
             //		mui.toast(options.uuid);
