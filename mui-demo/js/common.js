@@ -1,6 +1,6 @@
 /**
  * @author zwt
- * @date 2017-8-22
+ * @date 2017-11-22
  * 获取网络类型
  */
 function getNetwork() {
@@ -19,7 +19,7 @@ function getNetwork() {
     }
 }
 /**
- * @date 2017-8-22
+ * @date 2017-11-22
  * 监听网络变化
  */
 function onNetChange() {
@@ -29,17 +29,19 @@ function onNetChange() {
 		case plus.networkinfo.CONNECTION_ETHERNET:
 			　　　　
 		case plus.networkinfo.CONNECTION_WIFI:
-			mui.toast("当前网络为WiFi");
-			break;　　　　
+			mui.toast("当前网络为WiFi", {duration: 'short', type: 'div'});
+			break;
 		case plus.networkinfo.CONNECTION_CELL2G:
-			
+			mui.toast("当前网络为2G", {duration: 'short', type: 'div'});
+			break;
 		case plus.networkinfo.CONNECTION_CELL3G:
-			　　　　
+			mui.toast("当前网络为3G", {duration: 'short', type: 'div'});
+			break;
 		case plus.networkinfo.CONNECTION_CELL4G:
-			mui.toast("当前网络非WiFi");
+			mui.toast("当前网络为4G", {duration: 'short', type: 'div'});
 			break;　　　　
 		default:
-			mui.toast("当前没有网络");
+			mui.toast("当前没有网络", {duration: 'short', type: 'div'});
 			break;　　
 	}
 }
