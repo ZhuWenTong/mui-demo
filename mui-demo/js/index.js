@@ -1,5 +1,10 @@
 mui.plusReady(function() {
 	/**
+	 * 版本信息
+	 */
+	var version = mui.os.version;
+	console.log(version)
+	/**
 	 * 监听网络状态变化
 	 */
 	document.addEventListener("netchange", onNetChange, false);

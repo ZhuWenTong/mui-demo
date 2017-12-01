@@ -22,7 +22,9 @@
     $('#toast')[0].addEventListener('tap', function() {
         $.toast('这是一个提示框', { type: 'div' })
     });
-    $('.mui-scroll-wrapper').scroll();
+    $('.mui-scroll-wrapper').scroll({
+		indicators: false //隐藏滚动条
+	});
     $('#sheet').popover('toggle');
     //list
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
