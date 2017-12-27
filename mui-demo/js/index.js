@@ -13,7 +13,7 @@ mui.plusReady(function() {
             title: "系统选择按钮框",
             cancel: "取消",
             buttons: [{
-                title: "1"
+                title: '1'
             }, {
                 title: "2"
             }]
@@ -191,5 +191,28 @@ mui.plusReady(function() {
     			
     		}, 'div');
     	}
-    })
+    });
+	var allBtn = document.querySelectorAll("button");
+	for(var i = 0; i < allBtn.length; i++) {
+		allBtn[i].addEventListener('tap', function(e) {
+//			console.log(this.getAttribute('id'));
+//			var id = this.getAttribute('id');
+//			if(id != 'bowen') {
+//				return false;
+//			}
+			console.log(this.offsetHeight + '---' + this.offsetWidth + '---' + this.offsetTop + '---' + this.offsetLeft);
+			var ripple = document.createElement('div');
+			ripple.className = 'ripple';
+			ripple.style.height = ripple.style.width = Math.max(this.offsetWidth, this.offsetHeight) + 'px';
+			console.log(this.offsetWidth + '---' + this.offsetHeight)
+			this.appendChild(ripple);
+			ripple.classList.remove('show');
+			console.log(JSON.stringify(e))
+			var top = e.detail.center.y - this.offsetTop - ripple.offsetHeight / 2 - document.body.scrollTop;
+			var left = e.detail.center.x - this.offsetLeft - ripple.offsetWidth / 2 - document.body.scrollLeft;
+			ripple.style.top = top + 'px';
+			ripple.style.left = left + 'px';
+			ripple.classList.add('show');
+		})
+	}
 })

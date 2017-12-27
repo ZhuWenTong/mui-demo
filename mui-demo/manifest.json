@@ -251,7 +251,8 @@
 					"img/b.jpg"
 				],
 				"refer": [
-					"html/demoA.html"
+					"html/demoA.html",
+					"html/bluetooth.html"
 				],
 				"priority": 0
 			},

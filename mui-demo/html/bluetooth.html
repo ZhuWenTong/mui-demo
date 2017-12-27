@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" href="../css/mui.min.css">
+        <link rel="stylesheet" href="../css/common.css" />
+        <title></title>
+    </head>
+    <style>
+        
+    </style>
+
+    <body>
+       <header class="mui-bar mui-bar-nav">
+           <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+           <h1 class="mui-title">打印</h1>
+       </header>
+        <div class="mui-content">
+             <p><input id="bt1" type="button" value="搜索设备" onclick="searchDevices('a')"></p>
+	        <div>
+	           	<h5 class="mui-content-padded">未配对蓝牙设备</h5>
+	            <ul id="list1" class="mui-table-view">
+	
+	            </ul>
+	        </div>
+	
+	        <div>
+	           	<h5 class="mui-content-padded">已配对蓝牙设备</h5>
+	            <ul id="list2" class="mui-table-view">
+	
+	            </ul>
+	        </div>
+        </div>
+        <script src="../js/mui.min.js"></script>
+        <script src="../js/bluetooth.js"></script>
+    </body>
+</html>

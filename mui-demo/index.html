@@ -1,53 +1,88 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/common.css"/>
-</head>
-<body>
-    <header class="mui-bar mui-bar-nav">
-        <h1 class="mui-title">mui-plus-demo</h1>
-    </header>
-    <div class="mui-content">
-        <button type="button" class="mui-btn mui-btn-red mui-btn-block action">选择按钮框</button>
-        <button type="button" class="mui-btn mui-btn-green mui-btn-outlined alert">提示对话框</button>
-        <button type="button" class="mui-btn mui-btn-blue confirm">确认对话框</button>
-        <button type="button" class="mui-btn mui-btn-yellow waiting">等待对话框</button>
-        <button type="button" class="mui-btn mui-btn-purple date">日期选择对话框</button>
-        <button type="button" class="mui-btn mui-btn-grey time">时间选择对话框</button>
-        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined prompt">输入对话框</button>
-        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined toast">显示自动消失的提示消息</button>
-        <button type="button" class="mui-btn mui-btn-green mui-btn-outlined actionbuttonstyles">ActionButtonStyles</button>
-        <button type="button" class="mui-btn mui-btn-yellow mui-btn-outlined confirmoptions">ConfirmOptions</button>
-        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined pickdateoption">PickDateOption</button>
-        <button type="button" class="mui-btn mui-btn-red mui-btn-outlined picktimeoption">PickTimeOption</button>
-        <button type="button" class="mui-btn mui-btn-purple mui-btn-outlined waitingobj">WaitingObj</button>
-        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined actionsheetcallback">ActionSheetCallback</button>
-        
-        <!--进度条-->
-        <div class="mui-progressbar mui-progressbar-infinite">
-        	<span></span>
-        </div>
-        <button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="refresh">goRefreshHtml</button>
-        <button type="button" class="mui-btn mui-btn-yellow mui-btn-block" id="demo">goDemoHtml</button>
-    </div>
-    
-    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-    mui.init({
-    	preloadPages: [{//预加载
-    		url: 'html/refresh.html',
-    		id: 'refresh.html'
-    	}, {
-    		url: 'html/demo.html',
-    		id: 'demo.html'
-    	}]
-    })
-    </script>
-    <script src="js/common.js"></script>
-    <script src="js/index.js"></script>
-</body>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<style>
+			#demo {
+				height: 40px;
+				line-height: 40px;
+				padding: 0;
+				margin-bottom: 0;
+			}
+			
+			button {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.ripple {
+				position: absolute;
+				background: rgba(0, 0, 0, .15);
+				border-radius: 100%;
+				transform: scale(0);
+				pointer-events: none;
+			}
+			
+			.ripple.show {
+				animation: ripple 1s ease-out;
+			}
+			
+			@keyframes ripple {
+				to {
+					transform: scale(2);
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">mui-plus-demo</h1>
+		</header>
+		<div class="mui-content">
+			<button id="bowen" type="button" class="mui-btn mui-btn-red mui-btn-block action">选择按钮框</button>
+			<button id="bowen" type="button" class="mui-btn mui-btn-green mui-btn-outlined alert">提示对话框</button>
+			<button type="button" class="mui-btn mui-btn-blue confirm">确认对话框</button>
+			<button type="button" class="mui-btn mui-btn-yellow waiting">等待对话框</button>
+			<button type="button" class="mui-btn mui-btn-purple date">日期选择对话框</button>
+			<button type="button" class="mui-btn mui-btn-grey time">时间选择对话框</button>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined prompt">输入对话框</button>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined toast">显示自动消失的提示消息</button>
+			<button type="button" class="mui-btn mui-btn-green mui-btn-outlined actionbuttonstyles">ActionButtonStyles</button>
+			<button type="button" class="mui-btn mui-btn-yellow mui-btn-outlined confirmoptions">ConfirmOptions</button>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined pickdateoption">PickDateOption</button>
+			<button type="button" class="mui-btn mui-btn-red mui-btn-outlined picktimeoption">PickTimeOption</button>
+			<button type="button" class="mui-btn mui-btn-purple mui-btn-outlined waitingobj">WaitingObj</button>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined actionsheetcallback">ActionSheetCallback</button>
+
+			<!--进度条-->
+			<div class="mui-progressbar mui-progressbar-infinite">
+				<span></span>
+			</div>
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="refresh">goRefreshHtml</button>
+			<button type="button" class="mui-btn mui-btn-yellow mui-btn-block" id="demo">goDemoHtml</button>
+		</div>
+
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init({
+				preloadPages: [{ //预加载
+					url: 'html/refresh.html',
+					id: 'refresh.html'
+				}, {
+					url: 'html/demo.html',
+					id: 'demo.html'
+				}]
+			})
+		</script>
+		<script src="js/common.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+
 </html>

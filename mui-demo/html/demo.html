@@ -205,7 +205,7 @@
                     </div>
                     <!--radio-->
                     <ul class="mui-card mui-table-view mui-table-view-radio">
-                        <li class="mui-table-view-cell">
+                        <li class="mui-table-view-cell mui-selected">
                             <a class="mui-navigate-right">
                                     Item 1
                                 </a>
@@ -239,6 +239,7 @@
                     <!--demo-->
                     <div class="mui-card" style="padding: 10px 0 10px 10px;">
                     	<button type="button" class="mui-btn mui-btn-blue go-demo">goDemo</button>
+                    	<button type="button" class="mui-btn mui-btn-blue go-bluetooth">bluetooth</button>
                     </div>
                     <div class="mui-card" style="padding: 10px 0 10px 10px;">
                     	<span class="mui-icon iconfont icon-cool" style="font-size: 20px;color: #F0AD4E;"></span>
@@ -259,6 +260,15 @@
     		mui.openWindow({
     			url: 'demoA.html',
     			id: 'demoA.html',
+    			show: {
+    				aniShow: 'pop-in'
+    			}
+    		})
+    	});
+    	document.querySelector(".go-bluetooth").addEventListener('tap', function() {
+    		mui.openWindow({
+    			url: 'bluetooth.html',
+    			id: 'bluetooth.html',
     			show: {
     				aniShow: 'pop-in'
     			}
