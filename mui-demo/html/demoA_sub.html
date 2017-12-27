@@ -34,6 +34,8 @@
 			  	<option value="opel">Opel</option>
 			  	<option value="audi">Audi</option>
 			</select>
+			<button type="button" class="mui-btn mui-btn-blue audio-success">成功音效</button>
+			<button type="button" class="mui-btn mui-btn-blue audio-error">失败音效</button>
     	</div>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
@@ -60,6 +62,22 @@
 					console.log(JSON.stringify(obj))
 					obj.age = 22;
 					console.log(JSON.stringify(obj))
+				});
+				mui('.audio-success')[0].addEventListener('tap', function() {
+					var player = plus.audio.createPlayer('../media/tip.mp3');
+					player.play(function(){
+						console.log('success')
+					}, function() {
+						console.log('error')
+					})
+				})
+				mui('.audio-error')[0].addEventListener('tap', function() {
+					var player = plus.audio.createPlayer('../media/err.mp3');
+					player.play(function(){
+						console.log('success')
+					}, function() {
+						console.log('error')
+					})
 				})
 			})
 		</script>
