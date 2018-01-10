@@ -57,9 +57,17 @@ mui.plusReady(function() {
         });
     })
     mui('.mui-content').on('tap', '.prompt', function() {
-        plus.nativeUI.prompt("Input your name: ", function(e) {
-            console.log(((e.index == 0) ? "OK: " : "Cancel") + e.value);
-        }, "输入对话框", "your name", ["OK", "Cancel"]);
+//      plus.nativeUI.prompt("Input your name: ", function(e) {
+//          console.log(((e.index == 0) ? "OK: " : "Cancel") + e.value);
+//      }, "输入对话框", "your name", ["OK", "Cancel"]);
+		mui.prompt("输入用户名: ",'输入用户名', '提示', ['取消', '确定'], function(e) {
+			if(e.index == 1) {
+				var val = document.querySelector(".mui-popup-input textarea").value.trim();
+				console.log(val)
+			}
+		}, 'div');
+		var tt = document.querySelector(".mui-popup-input");
+		tt.innerHTML = '<textarea autofocus="autofocus" rows="2"></textarea>';
     })
     mui('.mui-content').on('tap', '.toast', function() {
         plus.nativeUI.toast("I'am toast information!");
