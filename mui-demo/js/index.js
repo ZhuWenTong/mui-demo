@@ -1,9 +1,18 @@
 mui.plusReady(function() {
+	new IndexPage();
+})
+
+function IndexPage() {
+	this.author = 'zwt';
+	this.init()
+}
+
+IndexPage.prototype.init = function() {
 	/**
 	 * 版本信息
 	 */
 	var version = mui.os.version;
-	console.log(version)
+	console.log(version + '---' + this.author)
 	/**
 	 * 监听网络状态变化
 	 */
@@ -223,4 +232,4 @@ mui.plusReady(function() {
 			ripple.classList.add('show');
 		})
 	}
-})
+}
