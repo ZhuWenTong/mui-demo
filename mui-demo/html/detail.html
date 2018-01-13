@@ -38,12 +38,8 @@
 				mui('html')[0].addEventListener("swiperight",function(){
 				    mui.back();
 				});
-	            //		var options = plus.webview.currentWebview();
-	            //		mui('#title')[0].innerHTML = options.title;
-	            //		mui.toast(options.uuid);
 	            window.addEventListener('options', function(e) { //通过自定义事件 获取参数
-	                console.log(e.detail.id)
-	                console.log(e.detail.title)
+	                console.log(e.detail.id + '---' + e.detail.title)
 	                mui('#title')[0].innerHTML = e.detail.title;
 	                mui.toast(e.detail.id, {type: 'div'});
 	                self.speak()

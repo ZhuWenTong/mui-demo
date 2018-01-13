@@ -1,9 +1,9 @@
 {
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H57D8925A",/*应用的标识，创建应用时自动生成，勿手动修改*/
-    "name": "muiDemo",/*应用名称，程序桌面图标名称*/
+    "name": "mui",/*应用名称，程序桌面图标名称*/
     "version": {
-        "name": "V171123112201",/*应用版本名称*/
+        "name": "1.0.0.1",/*应用版本名称*/
         "code": ""
     },
     "description": "",/*应用描述信息*/
@@ -185,10 +185,7 @@
                 },
                 "android": {
                     "mdpi": "", /*普通屏启动图片，分辨率：240x282*/
-                    "ldpi": "", /*大屏启动图片，分辨率：320x442*/
-                    "hdpi": "C:/Users/Admin/Desktop/资料/img/480.png", /*高分屏启动图片，分辨率：480x762*/
-                    "xhdpi": "C:/Users/Admin/Desktop/资料/img/720.png", /*720P高分屏启动图片，分辨率：720x1242*/
-                    "xxhdpi": "C:/Users/Admin/Desktop/资料/img/1080.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
+                    "ldpi": ""/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
             }
         }
