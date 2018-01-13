@@ -14,42 +14,15 @@
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
         <h1 class="mui-title" id="title"></h1>
     </header>
-    <script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-    	'use strict'
-        mui.init({
-        	gestureConfig: {
+    <script src="../js/mui.min.js"></script>
+    <script>
+    	mui.init({
+			gestureConfig: {
 				swipe: true //手势开关
 			}
-        });
-        mui.plusReady(function() {
-        	new DetailPage().init();
-        })
-        
-        class DetailPage {
-        	constructor() {
-        		this.name = 'zwt';
-        	}
-        	init() {
-        		/**
-				 * 向左滑动
-				 */
-				var self = this;
-				mui('html')[0].addEventListener("swiperight",function(){
-				    mui.back();
-				});
-	            window.addEventListener('options', function(e) { //通过自定义事件 获取参数
-	                console.log(e.detail.id + '---' + e.detail.title)
-	                mui('#title')[0].innerHTML = e.detail.title;
-	                mui.toast(e.detail.id, {type: 'div'});
-	                self.speak()
-	            })
-        	}
-        	speak() {
-        		console.log(this.name)
-        	}
-        }
+		});
     </script>
+    <script src="../js/detail.js"></script>
 </body>
 
 </html>
