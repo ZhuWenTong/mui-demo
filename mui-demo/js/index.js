@@ -79,7 +79,7 @@ IndexPage.prototype.init = function() {
 		tt.innerHTML = '<textarea autofocus="autofocus" rows="2"></textarea>';
     })
     mui('.mui-content').on('tap', '.toast', function() {
-        plus.nativeUI.toast("I'am toast information!");
+        mui.toast("I'am toast information!", {type: 'div'});
     })
     mui('.mui-content').on('tap', '.actionbuttonstyles', function() {
         var actionbuttons = [{

@@ -16,28 +16,43 @@
     </header>
     <script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
+    	'use strict'
         mui.init({
         	gestureConfig: {
 				swipe: true //手势开关
 			}
         });
         mui.plusReady(function() {
-        	/**
-			 * 向左滑动
-			 */
-			mui('html')[0].addEventListener("swiperight",function(){
-			    mui.back();
-			});
-            //		var options = plus.webview.currentWebview();
-            //		mui('#title')[0].innerHTML = options.title;
-            //		mui.toast(options.uuid);
-            window.addEventListener('options', function(e) { //通过自定义事件 获取参数
-                console.log(e.detail.id)
-                console.log(e.detail.title)
-                mui('#title')[0].innerHTML = e.detail.title;
-                mui.toast(e.detail.id)
-            })
+        	new DetailPage().init();
         })
+        
+        class DetailPage {
+        	constructor() {
+        		this.name = 'zwt';
+        	}
+        	init() {
+        		/**
+				 * 向左滑动
+				 */
+				var self = this;
+				mui('html')[0].addEventListener("swiperight",function(){
+				    mui.back();
+				});
+	            //		var options = plus.webview.currentWebview();
+	            //		mui('#title')[0].innerHTML = options.title;
+	            //		mui.toast(options.uuid);
+	            window.addEventListener('options', function(e) { //通过自定义事件 获取参数
+	                console.log(e.detail.id)
+	                console.log(e.detail.title)
+	                mui('#title')[0].innerHTML = e.detail.title;
+	                mui.toast(e.detail.id, {type: 'div'});
+	                self.speak()
+	            })
+        	}
+        	speak() {
+        		console.log(this.name)
+        	}
+        }
     </script>
 </body>
 
