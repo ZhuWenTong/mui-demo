@@ -25,6 +25,8 @@ class DetailPage {
 			self.speak();
 			self.val = parseFloat(e.detail.id);
 			document.querySelector(".result").innerText = self.val;
+			document.querySelector(".all").innerText = '';
+			document.querySelector(".race").innerText = '';
 		})
 		document.querySelector(".promise").addEventListener('tap', function() {
 			var obj = {
@@ -36,18 +38,18 @@ class DetailPage {
 			var w = plus.nativeUI.showWaiting('请稍后···'),
 				p1 = new Promise(function(resolve, reject) {
 					setTimeout(function() {
-						resolve('p1');
+						resolve('p1: ' + self.val);
 					}, 1000)
 				}),
 				p2 = new Promise(function(resolve, reject) {
 					setTimeout(function() {
-						resolve('p2');
+						resolve('p2: ' + (self.val + 10));
 						w.close();
 					}, 2000);
 				});
 			Promise.all([p1, p2]).then(function(result) {
 				console.log(JSON.stringify(result));
-				document.querySelector(".all").innerText = result;
+				document.querySelector(".all").innerText = result.join(' --- ');
 			})
 			Promise.race([p1, p2]).then(function(result) {
 				console.log(result)
