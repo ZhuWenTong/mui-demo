@@ -59,6 +59,7 @@ class DetailPage {
 		console.log(this.name)
 	}
 	myPromise(obj) {
+		obj.w = plus.nativeUI.showWaiting('请稍后')
 		var p = new Promise(function(resolve, reject) {
 				resolve(obj);
 			});
@@ -100,6 +101,7 @@ class DetailPage {
 		obj.self.val /= 5;
 		console.log(obj.self.val);
 		document.querySelector(".result").innerText = obj.self.val;
+		obj.w.close();
 		//		return new Promise(function(resolve, reject) {
 		//			setTimeout(function(resolve, reject) {
 		//				resolve(val);
