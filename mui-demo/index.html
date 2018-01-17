@@ -8,7 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/common.css" />
 		<style>
-			#demo {
+			.mui-content {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.mui-btn-block {
 				height: 40px;
 				line-height: 40px;
 				padding: 0;
@@ -18,6 +23,10 @@
 			button {
 				position: relative;
 				overflow: hidden;
+			}
+			
+			.mui-btn, button, input[type=button], input[type=reset], input[type=submit] {
+				margin-bottom: 4px;
 			}
 			
 			.ripple {
@@ -45,7 +54,7 @@
 		<header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title">mui-plus-demo</h1>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content mui-content-padded">
 			<button id="bowen" type="button" class="mui-btn mui-btn-red mui-btn-block action">选择按钮框</button>
 			<button id="bowen" type="button" class="mui-btn mui-btn-green mui-btn-outlined alert">提示对话框</button>
 			<button type="button" class="mui-btn mui-btn-blue confirm">确认对话框</button>
