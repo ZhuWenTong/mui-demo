@@ -1,11 +1,12 @@
 'use strict'
 mui.plusReady(function() {
-	new DetailPage().init();
+	new DetailPage('22').init();
 })
 
 class DetailPage {
-	constructor() {
+	constructor(age) {
 		this.name = 'zwt';
+		this.age = age;
 		this.val = 0;
 	}
 	init() {
@@ -49,7 +50,7 @@ class DetailPage {
 				});
 			Promise.all([p1, p2]).then(function(result) {
 				console.log(JSON.stringify(result));
-				document.querySelector(".all").innerText = result.join(' --- ');
+				document.querySelector(".all").innerText = JSON.stringify(result);
 			})
 			Promise.race([p1, p2]).then(function(result) {
 				console.log(result)
@@ -58,7 +59,7 @@ class DetailPage {
 		})
 	}
 	speak() {
-		console.log(this.name)
+		console.log(this.name + '---' + this.age);
 	}
 	myPromise(obj) {
 		obj.w = plus.nativeUI.showWaiting('请稍后')
