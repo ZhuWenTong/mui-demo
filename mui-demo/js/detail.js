@@ -69,7 +69,7 @@ class DetailPage {
 	}
 	add(obj) {
 		obj.self.val += 10;
-		console.log(obj.self.val)
+		console.log(obj.self.val + '---' + JSON.stringify(obj))
 		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
@@ -79,7 +79,7 @@ class DetailPage {
 	}
 	min(obj) {
 		obj.self.val -= 5;
-		console.log(obj.self.val);
+		console.log(obj.self.val + '---' + JSON.stringify(obj));
 		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
@@ -89,7 +89,7 @@ class DetailPage {
 	}
 	multiple(obj) {
 		obj.self.val *= 10;
-		console.log(obj.self.val);
+		console.log(obj.self.val + '---' + JSON.stringify(obj));
 		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
@@ -99,9 +99,9 @@ class DetailPage {
 	}
 	divsion(obj) {
 		obj.self.val /= 5;
-		console.log(obj.self.val);
 		document.querySelector(".result").innerText = obj.self.val;
 		obj.w.close();
+		console.log(obj.self.val + '---' + JSON.stringify(obj));
 		//		return new Promise(function(resolve, reject) {
 		//			setTimeout(function(resolve, reject) {
 		//				resolve(val);
