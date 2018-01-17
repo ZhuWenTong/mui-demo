@@ -17,6 +17,9 @@ IndexPage.prototype.init = function() {
 	 * 监听网络状态变化
 	 */
 	document.addEventListener("netchange", onNetChange, false);
+	plus.webview.currentWebview().setStyle({
+		scrollIndicator: 'none' //隐藏5+ 环境的滚动条
+	});
     mui('.mui-content').on('tap', '.action', function() {
         plus.nativeUI.actionSheet({
             title: "系统选择按钮框",
