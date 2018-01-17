@@ -28,7 +28,6 @@ class DetailPage {
 		})
 		document.querySelector(".promise").addEventListener('tap', function() {
 			var obj = {
-				val: self.val,
 				self: self
 			}
 			self.myPromise(obj);
@@ -68,9 +67,9 @@ class DetailPage {
 		})
 	}
 	add(obj) {
-		obj.val += 10;
-		console.log(obj.val)
-		document.querySelector(".result").innerText = obj.val;
+		obj.self.val += 10;
+		console.log(obj.self.val)
+		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
 				resolve(obj)
@@ -78,9 +77,9 @@ class DetailPage {
 		})
 	}
 	min(obj) {
-		obj.val -= 5;
-		console.log(obj.val);
-		document.querySelector(".result").innerText = obj.val;
+		obj.self.val -= 5;
+		console.log(obj.self.val);
+		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
 				resolve(obj);
@@ -88,9 +87,9 @@ class DetailPage {
 		})
 	}
 	multiple(obj) {
-		obj.val *= 10;
-		console.log(obj.val);
-		document.querySelector(".result").innerText = obj.val;
+		obj.self.val *= 10;
+		console.log(obj.self.val);
+		document.querySelector(".result").innerText = obj.self.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
 				resolve(obj)
@@ -98,10 +97,9 @@ class DetailPage {
 		})
 	}
 	divsion(obj) {
-		obj.val /= 5;
-		obj.self.val = obj.val;
-		console.log(obj.val);
-		document.querySelector(".result").innerText = obj.val;
+		obj.self.val /= 5;
+		console.log(obj.self.val);
+		document.querySelector(".result").innerText = obj.self.val;
 		//		return new Promise(function(resolve, reject) {
 		//			setTimeout(function(resolve, reject) {
 		//				resolve(val);
