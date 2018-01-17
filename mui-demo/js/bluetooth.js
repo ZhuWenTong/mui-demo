@@ -44,7 +44,6 @@ function searchDevices(address) {
                         li2.innerText = BleDevice.getName();
                         vlist2.appendChild(li2);
                     }
-
                 } else {
                     if(BleDevice.getName() != on ){ //判断防止重复添加
                     var li1 = document.createElement('li'); //注册
@@ -54,9 +53,7 @@ function searchDevices(address) {
                     on = BleDevice.getName();
                     li1.innerText = on;
                     vlist1.appendChild(li1);
-
                     }
-
                 }
             } else {
                 if(BleDevice.getName() != un ){ //判断防止重复添加
@@ -69,10 +66,6 @@ function searchDevices(address) {
                 li2.innerText = un;
                 vlist2.appendChild(li2);}
             }}
-
-
-
-
         }
     });
 
@@ -92,8 +85,9 @@ var device = null,
     bluetoothSocket = null;
 
 function print(mac_address) {
+	console.log(mac_address)
     if (!mac_address) {
-        mui.toast('请选择蓝牙打印机');
+        mui.toast('请选择蓝牙打印机', {type: 'div'});
         return;
     }
 
@@ -115,15 +109,15 @@ function print(mac_address) {
     console.log('设备已连接');
 
     if (bluetoothSocket.isConnected()) {
+    	console.log('打印= =')
         var outputStream = bluetoothSocket.getOutputStream();
         plus.android.importClass(outputStream);
-        var string = "打印测试\r\n";
-        var bytes = plus.android.invoke(string, 'getBytes', 'gbk');
+        var txt = "打印测试\r\n";
+        var bytes = plus.android.invoke(txt, 'getBytes', 'gbk');
         outputStream.write(bytes);
         outputStream.flush();
         device = null //这里关键
         bluetoothSocket.close(); //必须关闭蓝牙连接否则意外断开的话打印错误
-
     }
 
 }

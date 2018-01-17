@@ -3,7 +3,7 @@ mui.plusReady(function() {
 })
 
 function IndexPage() {
-	this.author = 'zwt';
+	this.author = 'zhuwt';
 	this.init()
 }
 
