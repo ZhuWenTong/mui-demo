@@ -6,6 +6,7 @@ mui.plusReady(function() {
 class DetailPage {
 	constructor() {
 		this.name = 'zwt';
+		this.val = 0;
 	}
 	init() {
 		/**
@@ -21,13 +22,20 @@ class DetailPage {
 			mui.toast(e.detail.id, {
 				type: 'div'
 			});
-			self.speak()
+			self.speak();
+			self.val = parseFloat(e.detail.id);
+			document.querySelector(".result").innerText = self.val;
 		})
 		document.querySelector(".promise").addEventListener('tap', function() {
-			self.myPromise(20);
+			var obj = {
+				val: self.val,
+				self: self
+			}
+			self.myPromise(obj);
 		})
 		document.querySelector(".promise1").addEventListener('tap', function() {
-			var p1 = new Promise(function(resolve, reject) {
+			var w = plus.nativeUI.showWaiting('请稍后···'),
+				p1 = new Promise(function(resolve, reject) {
 					setTimeout(function() {
 						resolve('p1');
 					}, 1000)
@@ -35,57 +43,65 @@ class DetailPage {
 				p2 = new Promise(function(resolve, reject) {
 					setTimeout(function() {
 						resolve('p2');
+						w.close();
 					}, 2000);
 				});
 			Promise.all([p1, p2]).then(function(result) {
 				console.log(JSON.stringify(result));
+				document.querySelector(".all").innerText = result;
 			})
 			Promise.race([p1, p2]).then(function(result) {
 				console.log(result)
+				document.querySelector(".race").innerText = result;
 			})
 		})
 	}
 	speak() {
 		console.log(this.name)
 	}
-	myPromise(val) {
+	myPromise(obj) {
 		var p = new Promise(function(resolve, reject) {
-			resolve(val);
-		})
+				resolve(obj);
+			});
 		p.then(this.add).then(this.min).then(this.multiple).then(this.divsion).catch(function(err) {
 			console.log(JSON.stringify(err));
 		})
 	}
-	add(val) {
-		val += val;
-		console.log(val)
+	add(obj) {
+		obj.val += 10;
+		console.log(obj.val)
+		document.querySelector(".result").innerText = obj.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
-				resolve(val)
+				resolve(obj)
 			}, 1000);
 		})
 	}
-	min(val) {
-		val -= 5;
-		console.log(val);
+	min(obj) {
+		obj.val -= 5;
+		console.log(obj.val);
+		document.querySelector(".result").innerText = obj.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
-				resolve(val);
+				resolve(obj);
 			}, 1000);
 		})
 	}
-	multiple(val) {
-		val *= 10;
-		console.log(val);
+	multiple(obj) {
+		obj.val *= 10;
+		console.log(obj.val);
+		document.querySelector(".result").innerText = obj.val;
 		return new Promise(function(resolve, reject) {
 			setTimeout(function() {
-				resolve(val)
+				resolve(obj)
 			}, 1000);
 		})
 	}
-	divsion(val) {
-		val /= 5;
-		console.log(val);
+	divsion(obj) {
+		obj.val /= 5;
+		obj.self.val = obj.val;
+		console.log(obj.val);
+		document.querySelector(".result").innerText = obj.val;
 		//		return new Promise(function(resolve, reject) {
 		//			setTimeout(function(resolve, reject) {
 		//				resolve(val);
