@@ -54,10 +54,16 @@
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
+		<!--<script src="../js/plugintest.js"></script>-->
 		<script type="text/javascript">
 			mui.init();
 			var obj = {};
 			mui.plusReady(function() {
+//				var fn = plus.plusintest.fn('zwt', '20', function(res) {
+//					console.log(res)
+//				}, function(err) {
+//					console.log(err)
+//				});
 				document.querySelector(".go-demob").addEventListener('tap', function() {
 					mui.openWindow({
 						url: 'demoB.html',

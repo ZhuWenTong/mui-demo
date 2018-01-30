@@ -91,7 +91,8 @@
         },
         "NativeObj":{
         	"description": "原生对象"
-        }
+        },
+        "plugintest": {}
     },
     "plus": {
     	"statusbar": {

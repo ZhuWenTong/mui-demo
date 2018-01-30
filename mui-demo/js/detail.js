@@ -18,7 +18,7 @@ class DetailPage {
 			mui.back();
 		});
 		window.addEventListener('options', function(e) { //通过自定义事件 获取参数
-			console.log(e.detail.id + '---' + e.detail.title)
+			console.log(e.detail.id + '---' + e.detail.title + '---' + `${self.name}`)
 			mui('#title')[0].innerHTML = 'promise - ' + e.detail.title;
 			mui.toast(e.detail.id, {
 				type: 'div'
