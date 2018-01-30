@@ -11,7 +11,7 @@ class DetailPage {
 	}
 	init() {
 		/**
-		 * 向左滑动
+		 * TODO 右滑返回上一页
 		 */
 		var self = this;
 		mui('html')[0].addEventListener("swiperight", function() {

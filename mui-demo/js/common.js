@@ -1,7 +1,7 @@
 /**
  * @author zwt
  * @date 2017-11-22
- * 获取网络类型
+ * TODO 获取网络类型
  */
 function getNetwork() {
 	var types = {}; 
@@ -20,7 +20,7 @@ function getNetwork() {
 }
 /**
  * @date 2017-11-22
- * 监听网络变化
+ * TODO 监听网络变化
  */
 function onNetChange() {
 	var nt = plus.networkinfo.getCurrentType();　

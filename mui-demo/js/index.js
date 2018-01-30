@@ -14,7 +14,7 @@ IndexPage.prototype.init = function() {
 	var version = mui.os.version;
 	console.log(version + '---' + this.author)
 	/**
-	 * 监听网络状态变化
+	 * TODO 监听网络状态变化
 	 */
 	document.addEventListener("netchange", onNetChange, false);
 	plus.webview.currentWebview().setStyle({
