@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 mui.plusReady(function() {
-	new DetailPage('22').init();
+	new DetailPage('22');
 })
 
 class DetailPage {
@@ -8,6 +8,7 @@ class DetailPage {
 		this.name = 'zwt';
 		this.age = age;
 		this.val = 0;
+		this.init();
 	}
 	init() {
 		/**
