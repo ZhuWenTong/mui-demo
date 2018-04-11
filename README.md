@@ -1,4 +1,3 @@
-[TOC]
 # mui-demo
 >mui的一些组件
 1. 窗口管理及数据传递
@@ -14,12 +13,12 @@
 11. es6语法
 
 ## learn Markdown
-### 表格1
+1. 表格1
 | 请求场景 | url   | params   | data |
 |:---------|:------|:---------|:-----|
 | 登录     | /login| username | wms  |
 
-### 表格2
+2. 表格2
 | 请求场景 | url            | params   | data           |
 |----------|----------------|----------|----------------|
 | 登录     | /login         | username | resources      |
@@ -29,7 +28,7 @@
 |          |                | wmsCode  | propertyShares |
 |          |                | SESSION  |                |
 
-### HTML生成表格
+3. HTML生成表格
 <table>
   <tr>
     <th>请求场景</th>
