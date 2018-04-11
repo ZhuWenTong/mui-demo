@@ -19,6 +19,14 @@
 |:---------|:------|:---------|:-----|
 | 登录     | /login| username | wms  |
 
+| 登录     | /login			|				 |			 |
+|----------|----------------|				 |			 |	
+| params   | username 		| password 		 | systemId  |
+| data 	   | resources 		| wms     		 | sessionId |
+| 搜索条件 | /find/resource |
+| params   | id				| wmsCode 		 | SESSION	 |
+| data	   | url			| propertyShares |			 |
+
 2. 表格2
 
 | 请求场景 | url            | params   | data           |
