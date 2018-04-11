@@ -35,20 +35,42 @@
     <th>请求场景</th>
     <th>url</th>
     <th>params</th>
-    <th colspan="2">data</th>
+    <th>data</th>
   </tr>
   <tr>
-    <td rowspan="3">登录</td>
-    <td rowspan="3">/login</td>
+    <td>登录</td>
+    <td>/login</td>
     <td>username</td>
-    <td colspan="2">resources</td>
+    <td>resources</td>
   </tr>
   <tr>
+    <td></td>
+    <td></td>
     <td>password</td>
-    <td colspan="2">wms</td>
+    <td>wms</td>
   </tr>
   <tr>
+    <td></td>
+    <td></td>
     <td>systemId</td>
-    <td colspan="2">sessionId</td>
+    <td>sessionId</td>
+  </tr>
+  <tr>
+    <td>搜索条件</td>
+    <td>/find/resource</td>
+    <td>id</td>
+    <td>url</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>wmsCode</td>
+    <td>propertyShares</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>SESSION</td>
+    <td></td>
   </tr>
 </table>
