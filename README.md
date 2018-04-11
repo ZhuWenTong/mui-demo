@@ -21,15 +21,21 @@
 
 * 表格1-1
 
-| 场景/p/d | 地址/参数/值1	| 参数/值2		 | 参数/值3	 |
-|----------|----------------|----------------|-----------|
-| 登录     | /login			|				 |			 |
-| params   | username 		| password 		 | systemId  |
-| data 	   | resources 		| wms     		 | sessionId |
-|		   |				|				 |			 |
-| 搜索条件 | /find/resource |				 |			 |
-| params   | id				| wmsCode 		 | SESSION	 |
-| data	   | url			| propertyShares |			 |
+| 场景/p/d| 地址/参数1/返回值1    								   | 参数2/值2	 	| 参数2/值3	|
+|---------|--------------------------------------------------------|----------------|-----------|
+| 登录    | /login												   |				|			|
+| params  | username 											   | password 		| systemId  |
+| data 	  | resources 											   | wms     		| sessionId |
+| 收货作业|														   |				|		    |
+|		  |														   |				|			|
+| 搜索条件| /find/resource 										   |				|           |
+| params  | id													   | wmsCode 		| SESSION   |
+| data	  | url													   | propertyShares |		    |
+|		  |														   |				|			|
+| 搜索结果| /takein/find/wmsBillList							   | 				|			|
+| params  | query{dateStart,dateEnd,pageNo,pageSize,wmsNo,wmsCode} | SESSION   		|			|
+| data	  | data												   |				|			|
+|		  |														   |				|			|
 
 2. 表格2
 
