@@ -22,10 +22,10 @@
 * 1.1
 
 | 登录     | /login			|				 |			 |
-|----------|----------------|				 |			 |	
+|----------|----------------|----------------|-----------|	
 | params   | username 		| password 		 | systemId  |
 | data 	   | resources 		| wms     		 | sessionId |
-| 搜索条件 | /find/resource |
+| 搜索条件 | /find/resource |				 |			 |
 | params   | id				| wmsCode 		 | SESSION	 |
 | data	   | url			| propertyShares |			 |
 
