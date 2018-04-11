@@ -19,6 +19,8 @@
 |:---------|:------|:---------|:-----|
 | 登录     | /login| username | wms  |
 
+* 1.1
+
 | 登录     | /login			|				 |			 |
 |----------|----------------|				 |			 |	
 | params   | username 		| password 		 | systemId  |
