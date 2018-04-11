@@ -57,40 +57,31 @@
     <th>data</th>
   </tr>
   <tr>
-    <td>登录</td>
-    <td>/login</td>
+    <td rowspan="3">登录</td>
+    <td rowspan="3">/login</td>
     <td>username</td>
     <td>resources</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
     <td>password</td>
     <td>wms</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
     <td>systemId</td>
     <td>sessionId</td>
   </tr>
   <tr>
-    <td>搜索条件</td>
-    <td>/find/resource</td>
+    <td rowspan="3">搜索条件</td>
+    <td rowspan="3">/find/resource</td>
     <td>id</td>
     <td>url</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
     <td>wmsCode</td>
-    <td>propertyShares</td>
+    <td rowspan="2">propertyShares</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
     <td>SESSION</td>
-    <td></td>
   </tr>
 </table>
 
