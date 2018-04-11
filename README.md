@@ -19,6 +19,16 @@
 |:--------|:----|:-------|:-----|
 | 登录     | /login| username | wms |
 
+### 表格2
+| 请求场景 | url            | params   | data           |
+|----------|----------------|----------|----------------|
+| 登录     | /login         | username | resources      |
+|          |                | password | wms            |
+|          |                | systemId | sessionId      |
+| 搜索条件 | /find/resource | id       | url            |
+|          |                | wmsCode  | propertyShares |
+|          |                | SESSION  |                |
+
 ### HTML生成表格
 <table>
   <tr>
