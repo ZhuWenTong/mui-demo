@@ -14,7 +14,31 @@
 11. es6语法
 
 ## learn Markdown
-### 表格
+### 表格1
 | 请求场景 | url | params | data |
 |:--------|:----|:-------|:-----|
 | 登录     | /login| username | wms |
+
+### HTML生成表格
+<table>
+  <tr>
+    <th>请求场景</th>
+    <th>url</th>
+    <th>params</th>
+    <th colspan="2">data</th>
+  </tr>
+  <tr>
+    <td rowspan="3">登录</td>
+    <td rowspan="3">/login</td>
+    <td>username</td>
+    <td colspan="2">resources</td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td colspan="2">wms</td>
+  </tr>
+  <tr>
+    <td>systemId</td>
+    <td colspan="2">sessionId</td>
+  </tr>
+</table>
