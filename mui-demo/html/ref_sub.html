@@ -93,21 +93,21 @@
 				mui('html')[0].addEventListener("swiperight",function(){
 				    mui.back();
 				});
-				var detailPage = mui.preload({
-					url: 'detail.html',
-					id: 'detail'
-				});
+				var detailPage = plus.webview.getWebviewById('detail');
 				mui('.mui-table-view').on('tap', '.mui-table-view-cell', function() {
 					//自定义事件 传参
 					mui.fire(detailPage, 'options', {
 						id: this.getAttribute('id'),
 						title: this.childNodes[0].innerHTML
 					});
+					//detailPage.show('pop-in', 300)
 					mui.openWindow({
 						id: 'detail',
-						url: 'detail.html',
 						show: {
 							aniShow: 'pop-in'
+						},
+						waiting: {
+							autoShow: false
 						}
 					})
 				})
